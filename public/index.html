@@ -45,6 +45,10 @@
             txtMensaje.value = '';
         })
 
+        socket.on('connect', () => {
+            console.log('conectado');
+        });
+
         socket.on('mensaje-from-server', (data) => {
             console.log(data);
             mensajes.innerHTML += `<li>${data.texto}</li>`
